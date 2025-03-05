@@ -11,7 +11,7 @@ class Input:
         grid.display()
 
         # Wpisywanie liter początkowych
-        print("Wpisz litery początkowe (format: x y litera). Wpisz 'end', aby zakończyć: ")
+        print("Wpisz litery początkowe (format: x y litera). X odnosi się do wiersza macierzy, y do kolumny, pole początkowe to nie (1,1) tylko (0,0). Wpisz 'end', aby zakończyć: ")
         while True:
             user_input = input("> ")
             print("\n")

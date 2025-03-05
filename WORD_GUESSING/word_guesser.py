@@ -51,6 +51,7 @@ class WordGuesser:
         for x in range(5):
             for y in range(5):
                 if self.is_valid_placement(x, y, word):
+                    print(f"Próbujemy umieścić: {word} na ({x}, {y})")
                     self.place_word(x, y, word)
                     return True
         return False
@@ -70,7 +71,12 @@ class WordGuesser:
     def is_valid_placement(self, x, y, word):
         for i, letter in enumerate(word):
             pos_x, pos_y = self.get_position_in_grid(x,y,i)
+            
+            if pos_x is None or pos_y is None:
+                return False
+            
             if self.grid[pos_x][pos_y] not in (None, letter):
+                print(f"❌ Konflikt na ({pos_x}, {pos_y}): {self.grid[pos_x][pos_y]} != {letter}")
                 return False
         return True
     
